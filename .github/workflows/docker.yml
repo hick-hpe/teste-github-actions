@@ -1,0 +1,15 @@
+name: Hello World com Docker
+
+on:
+  push:
+      branches:
+          - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Baixar imagem 'hello-world' do docker
+          run: docker pull hello-world
+        - name: Executar Docker
+          run: docker run hello-world
