@@ -48,6 +48,11 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
         # etapas
         steps:
             # nome da etapa
+            # - name: Clonar repositório
+            # clonar o repositório com variáveis configuradas
+            # uses: actions/checkout@v4
+
+            # nome da etapa
           - name: Dizer "Hello"
             # comando a executar
             run: echo "Hello, World!"
@@ -59,11 +64,26 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
     ```
     git commit -m "feat: Exemplo simples de workflow" 
     ```
-
 - Enviar para o repositório:
     ```
     git push
     ```
+- Após o `commit`, acessar o repositório no navegador
+- Acima das pastas, notará um símbolo amarelo:
+    ![Imagem](assets/img/sinal.png)
+    Isso indica que o workflow está executando.
 
-- Após o `commit`, acessar o repositório no navegador:
+- Acessar a aba `Actions`, podemos ver todos os workflows criados
+    ![Imagem](assets/img/aba-actions.png)
+
+- Workflows
+    ![Imagem](assets/img/image.png)
+
+    Podemos ver os detalhes de cada etapa.
+
+## Exercícios
+
+1. Crie um workflow para ...
+2. Crie um workflow para ...
+
 

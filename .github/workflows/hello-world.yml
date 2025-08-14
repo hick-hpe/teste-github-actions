@@ -18,6 +18,11 @@ jobs:
     # etapas
     steps:
         # nome da etapa
+      # - name: Clonar repositório
+        # clonar o repositório com variáveis configuradas
+        # uses: actions/checkout@v4
+
+        # nome da etapa
       - name: Dizer "Hello"
         # comando a executar
         run: echo "Hello, World!"
