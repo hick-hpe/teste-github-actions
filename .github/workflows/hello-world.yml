@@ -1,0 +1,23 @@
+# define o nome do workflow
+name: Hello World
+
+# define os listeners
+on:
+  # ouvindo o evento de `push`
+  push:
+    # as branches que executaram o workflow
+    branches:
+      - main.,lk
+
+# definição dos jobs
+jobs:
+  # job `hello`
+  hello:
+    # servidor que irá executar
+    runs-on: ubuntu-latest
+    # etapas
+    steps:
+        # nome da etapa
+      - name: Dizer "Hello"
+        # comando a executar
+        run: echo "Hello, World!"
