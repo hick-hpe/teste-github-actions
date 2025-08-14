@@ -1,0 +1,11 @@
+# Arquivos compilados do Python
+*.pyc
+*.pyo
+*.pyd
+
+# Pastas de cache do Python
+__pycache__/
+.pytest_cache
+
+# Outros arquivos temporários (opcional)
+*.swp
