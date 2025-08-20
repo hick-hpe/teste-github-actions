@@ -81,7 +81,7 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
 
     Podemos ver os detalhes de cada etapa.
 
-## Atividade: Validar Placas + CI no GitHub
+## Atividade: Validar Placas Mercosul + CI no GitHub
 
 ### Objetivo
 Implementar uma função que determina se uma placa é válida ou não no formato da Mercosul.
