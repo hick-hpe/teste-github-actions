@@ -81,9 +81,18 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
 
     Podemos ver os detalhes de cada etapa.
 
-## Exercícios
+## Atividade: Validar Placas + CI no GitHub
 
-1. Crie um workflow para ...
-2. Crie um workflow para ...
+### Objetivo
+Implementar uma função que determina se uma placa é válida ou não no formato da Mercosul.
 
+### Definição
+Uma placa é válida se seguir o formato `LLL NLNN`, onde:
+- `L` = letra maiúscula de A a Z
+- `N` = número de 0 a 9
 
+### Requisitos:
+
+- Implementar  a função `validar_placa(placa: str) -> bool` que retorna `True` se a placa for válida e `False` caso contrário.
+
+- Configurar CI no GitHub para rodar os testes automaticamente a cada push.
