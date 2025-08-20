@@ -33,30 +33,33 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
 
     # define os listeners
     on:
-      # ouvindo o evento de `push`
-      push:
+    # ouvindo o evento de `push`
+    push:
         # as branches que executaram o workflow
         branches:
-          - main
+        - main.,lk
 
     # definição dos jobs
     jobs:
-      # job `hello`
-      hello:
+    # job `hello`
+    hello:
         # servidor que irá executar
         runs-on: ubuntu-latest
         # etapas
         steps:
             # nome da etapa
-            # - name: Clonar repositório
+        # - name: Clonar repositório
             # clonar o repositório com variáveis configuradas
             # uses: actions/checkout@v4
+            # - name: Configurar Python
+            #   uses: actions/setup-python@v4
+            #   with:
+            #     python-version: '3.11.9'
 
             # nome da etapa
-          - name: Dizer "Hello"
+        - name: Dizer "Hello"
             # comando a executar
             run: echo "Hello, World!"
-
     ```
 ## Visuaizando execução
 
@@ -91,7 +94,7 @@ Uma placa é válida se seguir o formato `LLL NLNN`, onde:
 - `L` = letra maiúscula de A a Z
 - `N` = número de 0 a 9
 
-### Requisitos:
+### Requisitos
 
 - Implementar  a função `validar_placa(placa: str) -> bool` que retorna `True` se a placa for válida e `False` caso contrário.
 
