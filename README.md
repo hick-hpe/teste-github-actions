@@ -94,21 +94,21 @@ Servindo como base para a atividade, segue o exemplo das etapas de `code` e `tes
     ```
 - Criar o arquivo `exemplo.py`.
     ```python
-    def funcao_teste_01():
-        return "Teste 01 passou!!!"
+    def funcao_carregar_aquivo():
+        return "Arquivo carregado!!!"
 
-    def funcao_teste_02():
-        return "Teste 02 passou!!!"
+    def funcao_ler_aquivo():
+        return "Leitura realizada!!!"
     ```
 - Criar o arquivo `test_exemplo.py`.
     ```python
-    from exemplo import funcao_teste_01, funcao_teste_02
+    from exemplo import funcao_carregar_aquivo, funcao_ler_aquivo
 
-    def test_exemplo_01():
-        assert funcao_teste_01() == "Teste 01 passou!!!"
+    def test_carregar_aquivo():
+        assert funcao_carregar_aquivo() == "Arquivo carregado!!!"
         
-    def test_exemplo_02():
-        assert funcao_teste_02() == "Teste 02 passou!!!"
+    def test_ler_aquivo():
+        assert funcao_ler_aquivo() == "Leitura realizada!!!"
     ```
 - Executar os testes:
     ```bash
@@ -137,16 +137,16 @@ Servindo como base para a atividade, segue o exemplo das etapas de `code` e `tes
     rootdir: C:\Users\hpale\Desktop\teste-github-actions
     collected 2 items                                                                                                                                              
 
-    test_exemplo.py::test_exemplo_01 PASSED                                                                                                                  [ 50%]
-    test_exemplo.py::test_exemplo_02 PASSED                                                                                                                  [100%]
+    test_exemplo.py::test_carregar_aquivo PASSED                                                                                                                  [ 50%]
+    test_exemplo.py::test_ler_aquivo PASSED                                                                                                                  [100%]
 
     ====================================================================== 2 passed in 0.05s ======================================================================
     ```
 - Alterando `exemplo.py` para gerar um erro:
     ```python
-    def funcao_teste_01():
-        # alterar o número do teste
-        return "Teste 03 passou!!!"
+    def funcao_carregar_aquivo():
+        return "Arquivo não carregado!!!"
+    
     ```
 - Saída mal sucedida:
     ```bash
@@ -156,25 +156,24 @@ Servindo como base para a atividade, segue o exemplo das etapas de `code` e `tes
     rootdir: C:\Users\hpale\Desktop\teste-github-actions
     collected 2 items                                                                                                                                              
 
-    test_exemplo.py::test_exemplo_01 FAILED                                                                                                                  [ 50%]
-    test_exemplo.py::test_exemplo_02 PASSED                                                                                                                  [100%]
+    test_exemplo.py::test_carregar_aquivo FAILED                                                                                                             [ 50%]
+    test_exemplo.py::test_ler_aquivo PASSED                                                                                                                  [100%]
 
     ========================================================================== FAILURES ===========================================================================
-    _______________________________________________________________________ test_exemplo_01 _______________________________________________________________________
+    ____________________________________________________________________ test_carregar_aquivo _____________________________________________________________________
 
-        def test_exemplo_01():
-    >       assert funcao_teste_01() == "Teste 01 passou!!!"
-    E       AssertionError: assert 'Teste 03 passou!!!' == 'Teste 01 passou!!!'
+        def test_carregar_aquivo():
+    >       assert funcao_carregar_aquivo() == "Arquivo carregado!!!"
+    E       AssertionError: assert 'Arquivo não carregado!!!' == 'Arquivo carregado!!!'
     E
-    E         - Teste 01 passou!!!
-    E         ?        ^
-    E         + Teste 03 passou!!!
-    E         ?        ^
+    E         - Arquivo carregado!!!
+    E         + Arquivo não carregado!!!
+    E         ?        ++++
 
     test_exemplo.py:4: AssertionError
     =================================================================== short test summary info =================================================================== 
-    FAILED test_exemplo.py::test_exemplo_01 - AssertionError: assert 'Teste 03 passou!!!' == 'Teste 01 passou!!!'
-    ================================================================= 1 failed, 1 passed in 0.26s ================================================================= 
+    FAILED test_exemplo.py::test_carregar_aquivo - AssertionError: assert 'Arquivo não carregado!!!' == 'Arquivo carregado!!!'
+    ================================================================= 1 failed, 1 passed in 0.41s =================================================================
     ```
 
 ## Atividade: Validar Placas Mercosul + CI no GitHub
