@@ -14,7 +14,7 @@ O GitHub Actions é uma plataforma de integração contínua e entrega contínua
     - release
     - issues
 
-- `jobs`: onjunto de etapas em um fluxo de trabalho executadas no mesmo executor.
+- `jobs`: conjunto de etapas em um fluxo de trabalho executadas no mesmo executor.
 
 - `runner`: servidor que executa seus fluxos de trabalho. Disponíveis no GitHub:
     - Linux
