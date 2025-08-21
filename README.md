@@ -63,15 +63,9 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
     ```
 ## Visuaizando execução
 
-- Realizar o commit:
-    ```
-    git commit -m "feat: Exemplo simples de workflow" 
-    ```
-- Enviar para o repositório:
-    ```
-    git push
-    ```
-- Após o `commit`, acessar o repositório no navegador
+- Realizar o commit
+- Enviar para o repositório
+- Acessar o repositório no navegador
 - Acima das pastas, notará um símbolo amarelo:
     ![Imagem](assets/img/sinal.png)
     Isso indica que o workflow está executando.
