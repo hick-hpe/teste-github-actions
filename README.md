@@ -176,18 +176,20 @@ Servindo como base para a atividade, segue o exemplo das etapas de `code` e `tes
     ================================================================= 1 failed, 1 passed in 0.41s =================================================================
     ```
 
-## Atividade: Validar Placas Mercosul + CI no GitHub
+## Atividade: Calculadora + CI no GitHub
 
 ### Objetivo
-Implementar uma função que determina se uma placa é válida ou não no formato da Mercosul.
-
-### Definição
-Uma placa é válida no formato da Mercosul se seguir o formato `LLL NLNN`, onde:
-- `L` = letra maiúscula de A a Z
-- `N` = número de 0 a 9
+Implementar uma calculadora com as quatro operações básicas (adição, subtração, multiplicação e divisão) e criar, para cada operação, 3 casos de testes.
+Na divisão, incluir um caso de teste para a divisão por zero.
 
 ### Requisitos
-
-- Implementar  a função `validar_placa(placa: str) -> bool` que retorna `True` se a placa for válida e `False` caso contrário.
+- Implementar os métodos:
+    - `somar(a, b)`
+    - `subtrair(a, b)`
+    - `multiplicar(a, b)`
+    - `dividir(a, b)`
+- Criar 3 casos de testes para cada operação.
+    - O arquivo de teste precisa ter `test` no nome.
+    - Os métodos precisam começar com `test_`.
 - Criar um fluxo de trabalho para a execução do projeto e rodar os testes automaticamente a cada push.
 - Acompanhar a execução do pipeline no GitHub.
