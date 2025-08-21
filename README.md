@@ -37,7 +37,7 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
     push:
         # as branches que executaram o workflow
         branches:
-        - main.,lk
+        - main
 
     # definição dos jobs
     jobs:
@@ -48,16 +48,16 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
         # etapas
         steps:
             # nome da etapa
-        # - name: Clonar repositório
-            # clonar o repositório com variáveis configuradas
-            # uses: actions/checkout@v4
-            # - name: Configurar Python
+            # - name: Clonar repositório
+            # # clonar o repositório com variáveis de ambiente configuradas
+            #   uses: actions/checkout@v4
+            # - name: Configurar a versão do Python
             #   uses: actions/setup-python@v4
             #   with:
             #     python-version: '3.11.9'
 
             # nome da etapa
-        - name: Dizer "Hello"
+            - name: Dizer "Hello"
             # comando a executar
             run: echo "Hello, World!"
     ```
@@ -84,18 +84,117 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
 
     Podemos ver os detalhes de cada etapa.
 
+## Code + Testes
+Servindo como base para a atividade, segue o exemplo das etapas de `code` e `tests` em Python, com a biblioteca `pytest`.
+- Criar ambiente virtual.
+    ```bash
+    virtualenv venv
+    ```
+- Ativar ambiente virtual.
+    ```bash
+    source venv/bin/activate
+    ```
+- Instalar a biblioteca `pytest`.
+    ```bash
+    pip install pytest
+    ```
+- Criar o arquivo `exemplo.py`.
+    ```python
+    def funcao_teste_01():
+        return "Teste 01 passou!!!"
+
+    def funcao_teste_02():
+        return "Teste 02 passou!!!"
+    ```
+- Criar o arquivo `test_exemplo.py`.
+    ```python
+    from exemplo import funcao_teste_01, funcao_teste_02
+
+    def test_exemplo_01():
+        assert funcao_teste_01() == "Teste 01 passou!!!"
+        
+    def test_exemplo_02():
+        assert funcao_teste_02() == "Teste 02 passou!!!"
+    ```
+- Executar os testes:
+    ```bash
+    pytest
+    ```
+- Saída bem sucedida:
+    ```bash
+    ===================================================================== test session starts =====================================================================
+    platform win32 -- Python 3.11.9, pytest-8.4.1, pluggy-1.6.0
+    rootdir: C:\Users\hpale\Desktop\teste-github-actions
+    collected 1 item                                                                                                                                               
+
+    test_exemplo.py ..                                                                                                                                    [100%] 
+
+    ====================================================================== 2 passed in 0.03s ======================================================================
+    ```
+- Para ver o status de cada teste:
+    ```bash
+    pytest -v
+    ```
+- Saída com o nome de teste que está sendo executado:
+    ```bash
+    ===================================================================== test session starts =====================================================================
+    platform win32 -- Python 3.11.9, pytest-8.4.1, pluggy-1.6.0 -- C:\Users\hpale\Desktop\teste-github-actions\venv\Scripts\python.exe
+    cachedir: .pytest_cache
+    rootdir: C:\Users\hpale\Desktop\teste-github-actions
+    collected 2 items                                                                                                                                              
+
+    test_exemplo.py::test_exemplo_01 PASSED                                                                                                                  [ 50%]
+    test_exemplo.py::test_exemplo_02 PASSED                                                                                                                  [100%]
+
+    ====================================================================== 2 passed in 0.05s ======================================================================
+    ```
+- Alterando `exemplo.py` para gerar um erro:
+    ```python
+    def funcao_teste_01():
+        # alterar o número do teste
+        return "Teste 03 passou!!!"
+    ```
+- Saída mal sucedida:
+    ```bash
+    ===================================================================== test session starts =====================================================================
+    platform win32 -- Python 3.11.9, pytest-8.4.1, pluggy-1.6.0 -- C:\Users\hpale\Desktop\teste-github-actions\venv\Scripts\python.exe
+    cachedir: .pytest_cache
+    rootdir: C:\Users\hpale\Desktop\teste-github-actions
+    collected 2 items                                                                                                                                              
+
+    test_exemplo.py::test_exemplo_01 FAILED                                                                                                                  [ 50%]
+    test_exemplo.py::test_exemplo_02 PASSED                                                                                                                  [100%]
+
+    ========================================================================== FAILURES ===========================================================================
+    _______________________________________________________________________ test_exemplo_01 _______________________________________________________________________
+
+        def test_exemplo_01():
+    >       assert funcao_teste_01() == "Teste 01 passou!!!"
+    E       AssertionError: assert 'Teste 03 passou!!!' == 'Teste 01 passou!!!'
+    E
+    E         - Teste 01 passou!!!
+    E         ?        ^
+    E         + Teste 03 passou!!!
+    E         ?        ^
+
+    test_exemplo.py:4: AssertionError
+    =================================================================== short test summary info =================================================================== 
+    FAILED test_exemplo.py::test_exemplo_01 - AssertionError: assert 'Teste 03 passou!!!' == 'Teste 01 passou!!!'
+    ================================================================= 1 failed, 1 passed in 0.26s ================================================================= 
+    ```
+
 ## Atividade: Validar Placas Mercosul + CI no GitHub
 
 ### Objetivo
 Implementar uma função que determina se uma placa é válida ou não no formato da Mercosul.
 
 ### Definição
-Uma placa é válida se seguir o formato `LLL NLNN`, onde:
+Uma placa é válida no formato da Mercosul se seguir o formato `LLL NLNN`, onde:
 - `L` = letra maiúscula de A a Z
 - `N` = número de 0 a 9
 
 ### Requisitos
 
 - Implementar  a função `validar_placa(placa: str) -> bool` que retorna `True` se a placa for válida e `False` caso contrário.
-
-- Configurar CI no GitHub para rodar os testes automaticamente a cada push.
+- Criar um fluxo de trabalho para a execução do projeto e rodar os testes automaticamente a cada push.
+- Acompanhar a execução do pipeline no GitHub.
