@@ -30,34 +30,35 @@ Este workflow exibirá 'Hello, World', através de um terminal Linux
     ```yaml
     # define o nome do workflow
     name: Hello World
-
+    
     # define os listeners
     on:
-    # ouvindo o evento de `push`
-    push:
+      # ouvindo o evento de `push`
+      push:
         # as branches que executaram o workflow
         branches:
-        - main
-
+          - main
+    
     # definição dos jobs
     jobs:
-    # job `hello`
-    hello:
+      # job `hello`
+      hello:
         # servidor que irá executar
         runs-on: ubuntu-latest
         # etapas
         steps:
-            # nome da etapa
-            # - name: Clonar repositório
-            # # clonar o repositório com variáveis de ambiente configuradas
-            #   uses: actions/checkout@v4
-            # - name: Configurar a versão do Python
-            #   uses: actions/setup-python@v4
-            #   with:
-            #     python-version: '3.11.9'
-
-            # nome da etapa
-            - name: Dizer "Hello"
+          # nome da etapa
+          # - name: Clonar repositório
+          #   # clonar o repositório com variáveis de ambiente configuradas
+          #   uses: actions/checkout@v4
+          
+          # - name: Configurar a versão do Python
+          #   uses: actions/setup-python@v4
+          #   with:
+          #     python-version: '3.11.9'
+    
+          # nome da etapa
+          - name: Dizer "Hello"
             # comando a executar
             run: echo "Hello, World!"
     ```
