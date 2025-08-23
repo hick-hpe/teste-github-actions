@@ -1,5 +1,0 @@
-{
-    "github.copilot.chat.enableRetryAfterFilteredResponse": false,
-    "github.copilot.chat.languageContext.fix.typescript.enabled": false,
-    "explorer.compactFolders": false
-}
