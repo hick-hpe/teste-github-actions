@@ -2,7 +2,6 @@
 
 ### Objetivo
 Implementar uma calculadora com as quatro operações básicas (adição, subtração, multiplicação e divisão) e criar, para cada operação, 3 casos de testes.
-Na divisão, incluir um caso de teste para a divisão por zero.
 
 ### Requisitos
 - Clonar o repositório desta atividade.
