@@ -12,8 +12,8 @@ Implementar uma calculadora com as quatro operações básicas (adição, subtra
     - `multiplicar(a, b)`
     - `dividir(a, b)`
 - Criar 3 casos de testes para cada operação.
-    - O nome do arquivo de teste precisa começar com `test_` ou terminar com `_test`.
-    - Os métodos precisam começar com `test_`.
+    - O nome do arquivo de teste deve começar com `test_` ou terminar com `_test`.
+    - Os métodos devem começar com `test_`.
 - Criar um fluxo de trabalho para a execução do projeto e rodar os testes automaticamente a cada push.
 - Realizar `commit` e `push` no repositório criado.
 - Acompanhar a execução do pipeline no GitHub.
