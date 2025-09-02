@@ -179,4 +179,4 @@ Servindo como base para a atividade, segue o exemplo das etapas de `code` e `tes
 
 ## Atividade
 
-Acessar: [https://github.com/hick-hpe/teste-github-actions/tree/atividade](https://github.com/hick-hpe/teste-github-actions/tree/atividade)
+Acessar: [https://github.com/hick-hpe/workshop-github-actions/tree/atividade](https://github.com/hick-hpe/workshop-github-actions/tree/atividade)
